@@ -14,7 +14,7 @@
 
 
 
-<title>Member x | Hexo</title>
+<title>Arduino Application | Hexo</title>
 
 
 
@@ -46,6 +46,8 @@
 
 
 
+
+    <script src='https://unpkg.com/valine@1.4.16/dist/Valine.min.js'></script>
 
 
 
@@ -124,22 +126,22 @@
         <div class="post-title">
             
             
-                Member x
+                Arduino Application
             
             
         </div>
         <span class="post-date">
-            Sep 27, 2023
+            Oct 8, 2023
         </span>
     </div>
     <div class="post-img">
         
-            <img src="/profile_cover.png" alt="featured_image">
+            <div class="h-line-primary"></div>
               
     </div>
 </div>
     <div class="post-content">
-    <p>这里是一段简介。</p>
+    <p>这里是第一个项目。</p>
 
 </div> 
 
@@ -151,17 +153,12 @@
     <nav class="post-nav">
         <div class="prev-item">
            
-                <div class="icon arrow-left"></div>
-                <div class="post-link">
-                    <a href="/2023/10/08/article2/">Prev</a>
-                </div>
-            
         </div>
         <div class="next-item">
             
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="/2023/09/26/hello-world/">Next</a>  
+                  <a href="/2023/10/08/pro4/">Next</a>  
                 </div>  
             
         </div>
@@ -171,6 +168,24 @@
     
       <div class="post-comment">
 
+    
+        <div id="vcomments"></div>
+        <script>
+            var META = ['nick', 'mail', 'link'];
+            var meta = 'nick,mail';
+            meta = meta.split(',').filter(item => {
+                return META.includes(item);
+            });
+            new Valine({
+                el: '#vcomments',
+                appId: '',
+                appKey: '',
+                lang: 'en',
+                placeholder: 'Say something',
+                avatar: 'mp',
+                meta: meta
+            })
+        </script>    
      
 
      

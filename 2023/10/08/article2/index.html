@@ -14,7 +14,7 @@
 
 
 
-<title>Member xx | Hexo</title>
+<title>Chuang Chen | Hexo</title>
 
 
 
@@ -46,6 +46,8 @@
 
 
 
+
+    <script src='https://unpkg.com/valine@1.4.16/dist/Valine.min.js'></script>
 
 
 
@@ -124,7 +126,7 @@
         <div class="post-title">
             
             
-                Member xx
+                Chuang Chen
             
             
         </div>
@@ -134,12 +136,16 @@
     </div>
     <div class="post-img">
         
-            <img src="/profile_cover.png" alt="featured_image">
+            <img src="/m2.png" alt="featured_image">
               
     </div>
 </div>
     <div class="post-content">
-    <p>这里是一段简介。</p>
+    <h2 id="Education-Background"><a href="#Education-Background" class="headerlink" title="Education Background"></a>Education Background</h2><p>2019-2023 Automation, School of Electrical Engineering, Zhejiang University</p>
+<h2 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h2><p>Engineering, Interactive Design</p>
+<h2 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h2><p>Arduino, Circuit Design</p>
+<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><p>2019-2022, Vice-chairman, Red Cross Society of Zhejiang University<br>2022-2023, intern, International Design and Research Institute of Zhejiang University</p>
+<h2 id="Honor"><a href="#Honor" class="headerlink" title="Honor"></a>Honor</h2><p>2023, Outstanding Graduate, Zhejiang University</p>
 
 </div> 
 
@@ -161,7 +167,7 @@
             
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="/2023/09/27/article/">Next</a>  
+                  <a href="/2023/09/26/article/">Next</a>  
                 </div>  
             
         </div>
@@ -171,6 +177,24 @@
     
       <div class="post-comment">
 
+    
+        <div id="vcomments"></div>
+        <script>
+            var META = ['nick', 'mail', 'link'];
+            var meta = 'nick,mail';
+            meta = meta.split(',').filter(item => {
+                return META.includes(item);
+            });
+            new Valine({
+                el: '#vcomments',
+                appId: '',
+                appKey: '',
+                lang: 'en',
+                placeholder: 'Say something',
+                avatar: 'mp',
+                meta: meta
+            })
+        </script>    
      
 
      
