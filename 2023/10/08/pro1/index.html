@@ -14,7 +14,7 @@
 
 
 
-<title>Project management based on Hexo | Hexo</title>
+<title>Project Management based on Hexo | Hexo</title>
 
 
 
@@ -124,7 +124,7 @@
         <div class="post-title">
             
             
-                Project management based on Hexo
+                Project Management based on Hexo
             
             
         </div>
@@ -143,34 +143,77 @@
 
 <h1 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h1></center>
 
-<h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Go to the Git website and click Downloads:</p>
-<div align=center>
-<img src="/images/git.png" width="50%" height="auto">
-</div>
+<h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Go to the Git website and click Downloads:<br><img src="/2023zjudemini-hi2/images/git.png"><br><br><br>Select the version for your system to download:<br><img src="/2023zjudemini-hi2/images/git2.png"><br><br><br>In any folder, click the right button of the mouse, the icon in the picture below indicates that the download is completed:<br><img src="/2023zjudemini-hi2/images/git3.png"><br><br></p>
+<h2 id="Set-up-a-GitHub-repository"><a href="#Set-up-a-GitHub-repository" class="headerlink" title="Set up a GitHub repository"></a>Set up a GitHub repository</h2><p>Hexo is the framework for the project management website, but before you install it, make a repository on GitHub:<br><img src="/2023zjudemini-hi2/images/git5.png"><br><br><br>Name it <strong>&lt;yourname&gt;.github.io</strong>:<br><img src="/2023zjudemini-hi2/images/git4.png"><br><br></p>
+<h2 id="Binding-GitHub"><a href="#Binding-GitHub" class="headerlink" title="Binding GitHub"></a>Binding GitHub</h2><p>Start by adding the SSH key configuration on GitHub, which should come with SSH if you have Git Bash installed.<br>We can check if SSH is installed by opening Git Bash in any folder:<br><img src="/2023zjudemini-hi2/images/git6.png"><br><br><br>Type in this code:</p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+ssh-keygen -t rsa
+</pre>
 
-<p>Select the version for your system to download:</p>
-<div align=center>
-<img src="/images/git2.jpg" width="50%" height="auto">
-</div>
+<br>
 
-<p>In any folder, click the right button of the mouse, the icon in the picture below indicates that the download is completed:</p>
-<div align=center>
-<img src="/images/git3.png" width="50%" height="auto">
-</div>
-
-<h2 id="Set-up-a-GitHub-repository"><a href="#Set-up-a-GitHub-repository" class="headerlink" title="Set up a GitHub repository"></a>Set up a GitHub repository</h2><p>Hexo is the framework for the project management website, but before you install it, make a repository on GitHub:</p>
-<p>Name it <strong><yourname>.github.io</strong>:</p>
-<h2 id="Binding-GitHub"><a href="#Binding-GitHub" class="headerlink" title="Binding GitHub"></a>Binding GitHub</h2><p>输入</p>
-<p>ssh-keygen -t rsa</p>
-<p>然后敲四次回车键，之后就就会生成两个文件，分别为秘钥 id_rsa 和公钥 id_rsa.pub。文件的位置在 Git Bash 上面都有显示，默认生成在以下目录：<br>   Linux 系统：  ~&#x2F;.ssh<br>   Mac 系统：  ~&#x2F;.ssh<br>   Windows 10 ：C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh<br>复制对应的文件内容。<br>接下来进入我们的 GitHub 主页，先点击头像，再点击 settings ：</p>
-<p>先点击 SSH and GPG keys，再点击 New SSH key.</p>
-<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：</p>
+<p>Pressing the Enter key four times will generate two files: the secret key <strong>id_rsa</strong> and the public key <strong>id_rsa.pub</strong>. Files are generated in the following directories by default:<br>Linux: ~&#x2F;.ssh<br>Mac: ~&#x2F;.ssh<br>Windows 10: C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh<br>Let’s copy the file and go to our GitHub home page, click on the avatar and then <strong>settings</strong>:<br><img src="/2023zjudemini-hi2/images/git7.png"><br><br><br>Create a new SSH key, paste the contents of the copied public key <strong>id_rsa.pub</strong> into the key, and click <strong>Add SSH key</strong>:<br><img src="/2023zjudemini-hi2/images/git8.png"><br><br></p>
 <center>
 
 <h1 id="Environment-Configuration"><a href="#Environment-Configuration" class="headerlink" title="Environment Configuration"></a>Environment Configuration</h1></center>
 
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>##将Hexo部署到GitHub</p>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Start by creating a Blog folder, open Git Bash, and install Hexo by typing npm:</p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+npm install -g hexo-cli
+</pre>
 
+<br>
+
+<p><img src="/2023zjudemini-hi2/images/ev.png"><br><br><br>Once installed, type <code>hexo init</code> to initialize the blog:<br><img src="/2023zjudemini-hi2/images/ev2.png"><br><br><br>Then type <code>hexo g</code> for static deployment:<br><img src="/2023zjudemini-hi2/images/ev3.png"><br><br><br>At this point, the web page has been deployed, enter the <code>hexo s</code> command, the browser type localhost:4000 to open the newly deployed web page for local viewing:<br><img src="/2023zjudemini-hi2/images/ev4.png"><br><br></p>
+<h2 id="Deploying-Hexo-to-GitHub"><a href="#Deploying-Hexo-to-GitHub" class="headerlink" title="Deploying Hexo to GitHub"></a>Deploying Hexo to GitHub</h2><p>Now back in our <strong>Blog</strong> folder, open the <strong>_config.yml</strong> file and change the selected part as follows:<br><img src="/2023zjudemini-hi2/images/ev5.png"></p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+deploy:
+type: git
+repository: https://github.com/Yourname/Yourname.github.io.git #你的仓库地址
+branch: main
+</pre>
+
+<br>
+
+<p>Back in the Blog folder, open Git Bash, and enter the following command to install the Git deployment plugin:</p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+npm install hexo-deployer-git --save
+</pre>
+
+<br>
+
+<p>Then enter each of the following three commands:</p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+hexo clean #清除缓存文件 db.json 和已生成的静态文件 public
+hexo g #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
+hexo d #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+</pre>
+
+<br>
+
+<p>Then open the browser, type <strong><a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a></strong> can open your web page.</p>
+<center>
+
+<h1 id="Choose-Theme"><a href="#Choose-Theme" class="headerlink" title="Choose Theme"></a>Choose Theme</h1></center>
+
+<h2 id="Installing-Theme"><a href="#Installing-Theme" class="headerlink" title="Installing Theme"></a>Installing Theme</h2><p>There are many themes in Hexo, but here we introduce the Frame theme.<br>Open Git Bash in <strong>themes</strong> folder and enter the following command to install Frame:<br><img src="/2023zjudemini-hi2/images/ev6.png"></p>
+<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
+git clone https://github.com/zoeingwingkei/frame.git
+</pre>
+
+<br>
+
+
+<h2 id="Deploying-Theme"><a href="#Deploying-Theme" class="headerlink" title="Deploying Theme"></a>Deploying Theme</h2><p>In the hexo project’s _config.yml file, replace the project theme with frame:<br><img src="/2023zjudemini-hi2/images/ev7.png"><br><img src="/2023zjudemini-hi2/images/ev8.png"></p>
+<div align="center">
+    <img src="/images/ev7.png" width="300"/><img src="/images/ev8.png" width="300"/>
+</div>
+
+<br>
+
+<center>
+
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1></center>
 </div> 
 
 <script>
