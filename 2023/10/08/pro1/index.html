@@ -143,65 +143,13 @@
 
 <h1 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h1></center>
 
-<h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Go to the Git website and click Downloads:<br><img src="/2023zjudemini-hi2/images/git.png"><br><br><br>Select the version for your system to download:<br><img src="/2023zjudemini-hi2/images/git2.png"><br><br><br>In any folder, click the right button of the mouse, the icon in the picture below indicates that the download is completed:<br><img src="/2023zjudemini-hi2/images/git3.png"><br><br></p>
-<h2 id="Set-up-a-GitHub-repository"><a href="#Set-up-a-GitHub-repository" class="headerlink" title="Set up a GitHub repository"></a>Set up a GitHub repository</h2><p>Hexo is the framework for the project management website, but before you install it, make a repository on GitHub:<br><img src="/2023zjudemini-hi2/images/git5.png"><br><br><br>Name it <strong>&lt;yourname&gt;.github.io</strong>:<br><img src="/2023zjudemini-hi2/images/git4.png"><br><br></p>
-<h2 id="Binding-GitHub"><a href="#Binding-GitHub" class="headerlink" title="Binding GitHub"></a>Binding GitHub</h2><p>Start by adding the SSH key configuration on GitHub, which should come with SSH if you have Git Bash installed.<br>We can check if SSH is installed by opening Git Bash in any folder:<br><img src="/2023zjudemini-hi2/images/git6.png"><br><br><br>Type in this code:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-ssh-keygen -t rsa
-</pre>
-
-<br>
-
-<p>Pressing the Enter key four times will generate two files: the secret key <strong>id_rsa</strong> and the public key <strong>id_rsa.pub</strong>. Files are generated in the following directories by default:<br>Linux: ~&#x2F;.ssh<br>Mac: ~&#x2F;.ssh<br>Windows 10: C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh<br>Let’s copy the file and go to our GitHub home page, click on the avatar and then <strong>settings</strong>:<br><img src="/2023zjudemini-hi2/images/git7.png"><br><br><br>Create a new SSH key, paste the contents of the copied public key <strong>id_rsa.pub</strong> into the key, and click <strong>Add SSH key</strong>:<br><img src="/2023zjudemini-hi2/images/git8.png"><br><br></p>
-<center>
-
-<h1 id="Environment-Configuration"><a href="#Environment-Configuration" class="headerlink" title="Environment Configuration"></a>Environment Configuration</h1></center>
-
+<h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Go to the Git website and click Downloads:<br><img src="/2023zjudemini-hi2/images/git.png"><br>Select the version for your system to download:<br><img src="/2023zjudemini-hi2/images/git2.png"><br>In any folder, click the right button of the mouse, the icon in the picture below indicates that the download is completed:<br><img src="/2023zjudemini-hi2/images/git3.png"><br><br><br>You can click “Open Git Bash here” to <strong>open the terminal</strong> and follow up.<br><img src="/2023zjudemini-hi2/images/hxx8.png"><br><img src="/2023zjudemini-hi2/images/hxx9.png"><br><br></p>
+<h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Install Node.js to configure environment, and you can check if the installation is complete in the terminal.<br><img src="/2023zjudemini-hi2/images/hxx6.png"><br><img src="/2023zjudemini-hi2/images/hxx7.png"><br><br></p>
 <h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Start by creating a Blog folder, open Git Bash, and install Hexo by typing npm:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-npm install -g hexo-cli
-</pre>
-
-<br>
-
-<p><img src="/2023zjudemini-hi2/images/ev.png"><br><br><br>Once installed, type <code>hexo init</code> to initialize the blog:<br><img src="/2023zjudemini-hi2/images/ev2.png"><br><br><br>Then type <code>hexo g</code> for static deployment:<br><img src="/2023zjudemini-hi2/images/ev3.png"><br><br><br>At this point, the web page has been deployed, enter the <code>hexo s</code> command, the browser type localhost:4000 to open the newly deployed web page for local viewing:<br><img src="/2023zjudemini-hi2/images/ev4.png"><br><br></p>
-<h2 id="Deploying-Hexo-to-GitHub"><a href="#Deploying-Hexo-to-GitHub" class="headerlink" title="Deploying Hexo to GitHub"></a>Deploying Hexo to GitHub</h2><p>Now back in our <strong>Blog</strong> folder, open the <strong>_config.yml</strong> file and change the selected part as follows:<br><img src="/2023zjudemini-hi2/images/ev5.png"></p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-deploy:
-type: git
-repository: https://github.com/Yourname/Yourname.github.io.git #你的仓库地址
-branch: main
-</pre>
-
-<br>
-
-<p>Back in the Blog folder, open Git Bash, and enter the following command to install the Git deployment plugin:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-npm install hexo-deployer-git --save
-</pre>
-
-<br>
-
-<p>Then enter each of the following three commands:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-hexo clean #清除缓存文件 db.json 和已生成的静态文件 public
-hexo g #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
-hexo d #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-</pre>
-
-<br>
-
-<p>Then open the browser, type <strong><a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a></strong> can open your web page.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p><img src="/2023zjudemini-hi2/images/ev.png"><br>Once installed, type <code>hexo init</code> to initialize the blog:<br><img src="/2023zjudemini-hi2/images/ev2.png"><br>Then type <code>hexo g</code> for static deployment:<br><img src="/2023zjudemini-hi2/images/ev3.png"><br>At this point, the web page has been deployed, enter the <code>hexo s</code> command, the browser type localhost:4000 to open the newly deployed web page for local viewing:<br><img src="/2023zjudemini-hi2/images/ev4.png"><br><br></p>
 <h2 id="File-Specification"><a href="#File-Specification" class="headerlink" title="File Specification"></a>File Specification</h2><p>Once created, the following is what happens in the specified directory:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
- |   ├── _drafts
- |   └── _posts
-└── themes
-</pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── <span class="keyword">package</span>.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line"> |   ├── _drafts</span><br><span class="line"> |   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 
 <h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>Site configuration information, where you can configure most of the parameters.</p>
 <h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>Information about the application and the modules that need to be installed.</p>
@@ -213,10 +161,7 @@ hexo d #自动生成网站静态文件，并部署到设定的仓库(hexo deploy
 <h1 id="Choose-Theme"><a href="#Choose-Theme" class="headerlink" title="Choose Theme"></a>Choose Theme</h1></center>
 
 <h2 id="Installing-Theme"><a href="#Installing-Theme" class="headerlink" title="Installing Theme"></a>Installing Theme</h2><p>There are many themes in Hexo, but here we introduce the Frame theme.<br>Open Git Bash in <strong>themes</strong> folder and enter the following command to install Frame:<br><img src="/2023zjudemini-hi2/images/ev6.png"></p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-git clone https://github.com/zoeingwingkei/frame.git
-</pre>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/zoeingwingkei/frame.git</span></span><br></pre></td></tr></table></figure>
 <br>
 
 
@@ -226,33 +171,43 @@ git clone https://github.com/zoeingwingkei/frame.git
 
 <h1 id="Building-Website"><a href="#Building-Website" class="headerlink" title="Building Website"></a>Building Website</h1></center>
 
-<h2 id="Manage-Home-Page"><a href="#Manage-Home-Page" class="headerlink" title="Manage Home Page"></a>Manage Home Page</h2><p>By default, your homepage will show a title, body text, some links, and a cover art. You can modify these configurations in the <strong>config.ym1</strong> file under the theme folder (&#x2F;themes&#x2F;frame&#x2F;) :<br>If you want to change the cover image, place your image in the thems&#x2F;frame&#x2F;source directory and then change the <strong>image</strong> file path accordingly.<br>If you want to adjust the sidebar, change the <strong>links</strong> file path accordingly<br><img src="/2023zjudemini-hi2/images/hx0.png"><br><img src="/2023zjudemini-hi2/images/hx1.png"><br><br></p>
-<h2 id="Write-Document"><a href="#Write-Document" class="headerlink" title="Write Document"></a>Write Document</h2><p>Create a new markdown file in the <strong>Blog&#x2F;source&#x2F;_posts&#x2F;</strong> path (If you do not have a markdown editor, directly create a txt file or other files, rename the suffix to md, when editing, right-click → open mode → Notepad, or modify the file suffix after editing).<br><img src="/2023zjudemini-hi2/images/hx2.png"><br><br><br>Add the following declaration at the beginning of the file:</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
----
-title: your title
----
-</pre>
-
-<p>Then feel free to add some body parts such as:<br><img src="/2023zjudemini-hi2/images/hx3.png"><br><br><br>You can see that we have the new document in our website list.<br><img src="/2023zjudemini-hi2/images/hx4.png"><br><img src="/2023zjudemini-hi2/images/hx5.png"><br><br></p>
-<h2 id="Manage-Pages"><a href="#Manage-Pages" class="headerlink" title="Manage Pages"></a>Manage Pages</h2><p>There is a need to add or remove pages from a website. For the example of adding an introduction page, firstly you need to create a hexo page called <strong>about</strong>.</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-hexo new page about
-</pre>
+<h2 id="Set-Home-Page"><a href="#Set-Home-Page" class="headerlink" title="Set Home Page"></a>Set Home Page</h2><h3 id="manage-the-sidebar-title-and-main-image"><a href="#manage-the-sidebar-title-and-main-image" class="headerlink" title="(manage the sidebar, title, and main image)"></a>(manage the sidebar, title, and main image)</h3><p>By default, your homepage will show a title, body text, some links, and a cover art. You can modify these configurations in the <strong>config.yml</strong> file under the theme folder (&#x2F;themes&#x2F;frame&#x2F;) :<br>If you want to change the cover image, place your image in the thems&#x2F;frame&#x2F;source directory and then change the <strong>image</strong> file path accordingly.<br>If you want to adjust the sidebar, change the <strong>links</strong> file path accordingly<br><img src="/2023zjudemini-hi2/images/hx0.png"><br><img src="/2023zjudemini-hi2/images/hx1.png"><br><br></p>
+<h2 id="Manage-Pages"><a href="#Manage-Pages" class="headerlink" title="Manage Pages"></a>Manage Pages</h2><h3 id="manage-the-navigation-bar"><a href="#manage-the-navigation-bar" class="headerlink" title="(manage the navigation bar)"></a>(manage the navigation bar)</h3><p>There is a need to add or remove pages from a website. For the example of adding an introduction page, firstly you need to create a hexo page called <strong>about</strong>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="title class_">page</span> about</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2023zjudemini-hi2/images/hx6.png"><br>Then, open the -config.yml file in the Blog&#x2F;themes&#x2F;frame&#x2F; directory and create a new entry under the menu property as shown below.<br><img src="/2023zjudemini-hi2/images/hx7.png"><br>Then, in the source&#x2F;about&#x2F;index.md file, enter what you want as a profile:<br><img src="/2023zjudemini-hi2/images/hx8.png"><br>You can see that the profile page has been added to the site.<br><img src="/2023zjudemini-hi2/images/hx9.png"><br><br></p>
-<h2 id="Pull-to-Github"><a href="#Pull-to-Github" class="headerlink" title="Pull to Github"></a>Pull to Github</h2><p>After each update, you will only see the changes locally. If you repeat the deployment (as shown below), the GitHub Page you deploy will also change for everyone to see.</p>
-<pre style="background-color:#efeded;padding:10px;border-radius: 4px;border: solid 1px;border-color:#c9c7c7">
-hexo clean #清除缓存文件 db.json 和已生成的静态文件 public
-hexo g #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
-hexo d #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
-</pre>
+<h2 id="Write-First-Document"><a href="#Write-First-Document" class="headerlink" title="Write First Document"></a>Write First Document</h2><p>Create a new markdown file in the <strong>Blog&#x2F;source&#x2F;_posts&#x2F;</strong> path (If you do not have a markdown editor, directly create a txt file or other files, rename the suffix to md, when editing, right-click → open mode → Notepad, or modify the file suffix after editing).<br><img src="/2023zjudemini-hi2/images/hx2.png"><br><br><br>Add the following declaration at the beginning of the file, and then feel free to add some body parts such as:<br><img src="/2023zjudemini-hi2/images/hxx4.png"><br><br><br>You can see that we have the new document in our website list.<br><img src="/2023zjudemini-hi2/images/hx4.png"><br><img src="/2023zjudemini-hi2/images/hx5.png"><br><br></p>
+<center>
+
+<h1 id="Clone-Pull-and-Push-to-Github"><a href="#Clone-Pull-and-Push-to-Github" class="headerlink" title="Clone, Pull and Push to Github"></a>Clone, Pull and Push to Github</h1></center>
+
+<h2 id="Set-up-a-GitHub-repository"><a href="#Set-up-a-GitHub-repository" class="headerlink" title="Set up a GitHub repository"></a>Set up a GitHub repository</h2><p>Hexo is the framework for the project management website, but before you install it, make a repository on GitHub:<br><img src="/2023zjudemini-hi2/images/git5.png"><br><br><br>Name it <strong>&lt;yourname&gt;.github.io</strong>:<br><img src="/2023zjudemini-hi2/images/git4.png"><br><br></p>
+<h2 id="Binding-GitHub"><a href="#Binding-GitHub" class="headerlink" title="Binding GitHub"></a>Binding GitHub</h2><p>Start by adding the SSH key configuration on GitHub, which should come with SSH if you have Git Bash installed.<br>We can check if SSH is installed by opening Git Bash in any folder:<br><img src="/2023zjudemini-hi2/images/git6.png"><br><br><br>Type in this code:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Pressing the Enter key four times will generate two files: the secret key <strong>id_rsa</strong> and the public key <strong>id_rsa.pub</strong>. Files are generated in the following directories by default:<br>Linux: ~&#x2F;.ssh<br>Mac: ~&#x2F;.ssh<br>Windows 10: C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh<br>Let’s copy the file and go to our GitHub home page, click on the avatar and then <strong>settings</strong>:<br><img src="/2023zjudemini-hi2/images/git7.png"><br><br><br>Create a new SSH key, paste the contents of the copied public key <strong>id_rsa.pub</strong> into the key, and click <strong>Add SSH key</strong>:<br><img src="/2023zjudemini-hi2/images/git8.png"><br><br></p>
+<h2 id="Deploying-Hexo-to-GitHub"><a href="#Deploying-Hexo-to-GitHub" class="headerlink" title="Deploying Hexo to GitHub"></a>Deploying Hexo to GitHub</h2><p>Now back in our <strong>Blog</strong> folder, open the <strong>_config.yml</strong> file and change the selected part as follows:<br><img src="/2023zjudemini-hi2/images/ev5.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: https:<span class="comment">//github.com/Yourname/Yourname.github.io.git #你的仓库地址</span></span><br><span class="line">branch: main</span><br></pre></td></tr></table></figure>
+
+<p>Back in the Blog folder, open Git Bash, and enter the following command to install the Git deployment plugin:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>Then enter each of the following three commands:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存文件 db.json 和已生成的静态文件 <span class="keyword">public</span></span><br><span class="line">hexo g #生成网站静态文件到默认设置的 <span class="keyword">public</span> 文件夹(hexo generate 的缩写)</span><br><span class="line">hexo d #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
+<p>Then open the browser, type <strong><a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a></strong> can open your web page.</p>
+<h1 id="Push-to-github"><a href="#Push-to-github" class="headerlink" title="Push to github"></a>Push to github</h1><p>After each update, you will only see the changes locally. If you repeat the deployment (as shown below), the GitHub Page you deploy will also change for everyone to see.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo d </span><br></pre></td></tr></table></figure>
 
 <center>
 
 <h1 id="Teamwork"><a href="#Teamwork" class="headerlink" title="Teamwork"></a>Teamwork</h1></center>
 
-<h2 id="Git-Branch-Management"><a href="#Git-Branch-Management" class="headerlink" title="Git Branch Management"></a>Git Branch Management</h2><p>Using Git for branch management is an effective way. Each team member can work on their own branch and then create Pull Requests to merge changes to the master branch. This allows team members to work independently while ensuring the stability of the master branch.<br>For team members, it is important to change the deployment path and branch in the _config.yml file to make it easier for the project manager to manage.<br><img src="/2023zjudemini-hi2/images/hx10.png"><br><br></p>
+<h2 id="Github-Cooperation"><a href="#Github-Cooperation" class="headerlink" title="Github Cooperation"></a>Github Cooperation</h2><p>To directly invite team members to manage the project, you need to add administrative permissions.<br>Start by adding collaborators and teams in the project Settings, inviting team members and adding them as maintenance roles.</p>
+<p><img src="/2023zjudemini-hi2/images/hxx1.png"></p>
+<p>After team members accept the invitation, they can manage the project.<br><img src="/2023zjudemini-hi2/images/hxx2.png"><br><br></p>
+<h2 id="GitHub-Branch-Management"><a href="#GitHub-Branch-Management" class="headerlink" title="GitHub Branch Management"></a>GitHub Branch Management</h2><p>Using Git for branch management is an effective way. Each team member can work on their own branch and then create Pull Requests to merge changes to the master branch. This allows team members to work independently while ensuring the stability of the master branch.<br>For team members, it is important to change the deployment path and branch in the _config.yml file to make it easier for the project manager to manage.<br><img src="/2023zjudemini-hi2/images/hx10.png"><br><img src="/2023zjudemini-hi2/images/hxx3.png"><br><br></p>
 <h2 id="Markdown-File-Separation"><a href="#Markdown-File-Separation" class="headerlink" title="Markdown File Separation"></a>Markdown File Separation</h2><p>Hexo usually uses Markdown files to write its content. You can assign different Markdown files to different team members, each responsible for their own part. When they are done editing, use a version control system to merge the changes.</p>
 <center>
 
