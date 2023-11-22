@@ -167,8 +167,7 @@
 
 <h1 id="Modeling-Procedure"><a href="#Modeling-Procedure" class="headerlink" title="Modeling Procedure"></a>Modeling Procedure</h1></center>
 
-<ol>
-<li>Basic parameter design<table>
+<h2 id="1-Basic-parameter-design"><a href="#1-Basic-parameter-design" class="headerlink" title="1. Basic parameter design"></a>1. Basic parameter design</h2><table>
 <thead>
 <tr>
 <th><strong>Section of shaft</strong></th>
@@ -196,33 +195,16 @@
 <td>37</td>
 </tr>
 </tbody></table>
-</li>
-</ol>
-<p><img src="/2023zjudemini-hi2/images/md0.png"><br><img src="/2023zjudemini-hi2/images/md12.png"><br>Take the chamfer of the shaft end as 0.5 × 45°, and the radius of the fillet at the shoulder of the shaft R<sub>1</sub> &#x3D; 2, R<sub>2</sub> &#x3D; R<sub>3</sub> &#x3D; 3. (R<sub>1</sub> is the linkage of the shaft sections Ⅰ and Ⅱ, R<sub>2</sub> is the right side of the shaft section Ⅰ, and R<sub>3</sub> is the left side of the shaft section Ⅳ)<br>Measuring claw length of 12mm, depth of 13mm; cone length of 25mm; micrometer screw diameter of 6mm, according to the standard size of the screw specification table, take the pitch of M6 × 0.5; cone distance from the left side of the 20mm, the cone length of 25mm; the length of the force measuring device is 21mm.</p>
-<ol start="2">
-<li><p>New Component<br><img src="/2023zjudemini-hi2/images/md2.png"><br>Detailed modeling of this part is demonstrated:<br><img src="/2023zjudemini-hi2/images/cad4.GIF"></p>
-<br>
-</li>
-<li><p>Draw a sketch of the measuring claw<br><img src="/2023zjudemini-hi2/images/md3.png"></p>
-<br></li>
-<li><p>Create a measurement claw entity using the ‘Stretch’ command<br><img src="/2023zjudemini-hi2/images/md4.png"></p>
-<br></li>
-<li><p>By using the “Circular Array” command, select the required number of components to obtain the specified number and corresponding angle of copied components. Each component maintains synchronization with the modification command.<br><img src="/2023zjudemini-hi2/images/md5.png"></p>
-<br></li>
-<li><p>Cut the measuring claw through the “Stretch” and “Cut” commands to make it fit with the tapered pin<br><img src="/2023zjudemini-hi2/images/md6.png"><br><img src="/2023zjudemini-hi2/images/md7.png"><br>It can be seen that the three components established by the “circular pattern” command execute modification commands synchronously.</p>
-</li>
-</ol>
+<p><img src="/2023zjudemini-hi2/images/md0.png"><br><img src="/2023zjudemini-hi2/images/cadd1.png"><br>Take the chamfer of the shaft end as 0.5 × 45°, and the radius of the fillet at the shoulder of the shaft R<sub>1</sub> &#x3D; 2, R<sub>2</sub> &#x3D; R<sub>3</sub> &#x3D; 3. (R<sub>1</sub> is the linkage of the shaft sections Ⅰ and Ⅱ, R<sub>2</sub> is the right side of the shaft section Ⅰ, and R<sub>3</sub> is the left side of the shaft section Ⅳ)<br>Measuring claw length of 12mm, depth of 13mm; cone length of 25mm; micrometer screw diameter of 6mm, according to the standard size of the screw specification table, take the pitch of M6 × 0.5; cone distance from the left side of the 20mm, the cone length of 25mm; the length of the force measuring device is 21mm.</p>
+<h2 id="2-New-Component"><a href="#2-New-Component" class="headerlink" title="2. New Component"></a>2. New Component</h2><p><img src="/2023zjudemini-hi2/images/md2.png"><br>Detailed modeling of this part is demonstrated:<br><img src="/2023zjudemini-hi2/images/cad4.GIF"><br><br></p>
+<h2 id="3-Draw-a-sketch"><a href="#3-Draw-a-sketch" class="headerlink" title="3. Draw a sketch"></a>3. Draw a sketch</h2><p>Draw a sketch of the measuring claw<br><img src="/2023zjudemini-hi2/images/md3.png"><br><br></p>
+<h2 id="4-Create-a-measurement-entity"><a href="#4-Create-a-measurement-entity" class="headerlink" title="4. Create a measurement entity"></a>4. Create a measurement entity</h2><p>Create a measurement claw entity using the ‘Stretch’ command<br><img src="/2023zjudemini-hi2/images/md4.png"><br><br></p>
+<h2 id="5-obtain-the-specified-number"><a href="#5-obtain-the-specified-number" class="headerlink" title="5. obtain the specified number"></a>5. obtain the specified number</h2><p>By using the “Circular Array” command, select the required number of components to obtain the specified number and corresponding angle of copied components. Each component maintains synchronization with the modification command.<br><img src="/2023zjudemini-hi2/images/md5.png"><br><br></p>
+<h2 id="6-fit-the-tapered-pin"><a href="#6-fit-the-tapered-pin" class="headerlink" title="6. fit the tapered pin"></a>6. fit the tapered pin</h2><p>Cut the measuring claw through the “Stretch” and “Cut” commands to make it fit with the tapered pin<br><img src="/2023zjudemini-hi2/images/md6.png"><br><img src="/2023zjudemini-hi2/images/md7.png"><br>It can be seen that the three components established by the “circular pattern” command execute modification commands synchronously.</p>
 <p><img src="/2023zjudemini-hi2/images/md8.png"><br><br></p>
-<ol start="7">
-<li><p>Create a “slider” connection between specified components using the “Link” command<br><img src="/2023zjudemini-hi2/images/md9.png"></p>
-<br>
-</li>
-<li><p>By using the “Motion Link” command, establish a motion distance ratio between two specified “connections”. In this example, the ratio of the motion distance between the conical pin and the measuring claw is 1:0.577 (1: tan30 °)<br><img src="/2023zjudemini-hi2/images/md10.png"></p>
-<br>
-</li>
-<li><p>By using the “Connect” command, establish a “cylindrical connection” between the fixed sleeve and the differential cylinder. Due to the pitch of the micrometer screw being 0.5mm, the micrometer screw moves forward or backward 0.5mm when the differential cylinder rotates once. Therefore, set the distance between the micrometer screws in the cylindrical connection to 0.5mm.<br><img src="/2023zjudemini-hi2/images/md11.png"></p>
-<br></li>
-</ol>
+<h2 id="7-Create-a-connection"><a href="#7-Create-a-connection" class="headerlink" title="7. Create a connection"></a>7. Create a connection</h2><p>Create a “slider” connection between specified components using the “Link” command<br><img src="/2023zjudemini-hi2/images/md9.png"><br><br></p>
+<h2 id="8-establish-a-motion-distance-ratio"><a href="#8-establish-a-motion-distance-ratio" class="headerlink" title="8. establish a motion distance ratio"></a>8. establish a motion distance ratio</h2><p>By using the “Motion Link” command, establish a motion distance ratio between two specified “connections”. In this example, the ratio of the motion distance between the conical pin and the measuring claw is 1:0.577 (1: tan30 °)<br><img src="/2023zjudemini-hi2/images/md10.png"><br><br></p>
+<h2 id="9-establish-a-cylindrical-connection"><a href="#9-establish-a-cylindrical-connection" class="headerlink" title="9. establish a cylindrical connection"></a>9. establish a cylindrical connection</h2><p>By using the “Connect” command, establish a “cylindrical connection” between the fixed sleeve and the differential cylinder. Due to the pitch of the micrometer screw being 0.5mm, the micrometer screw moves forward or backward 0.5mm when the differential cylinder rotates once. Therefore, set the distance between the micrometer screws in the cylindrical connection to 0.5mm.<br><img src="/2023zjudemini-hi2/images/md11.png"><br><br></p>
 <center>
 
 <h1 id="Motion-Animation"><a href="#Motion-Animation" class="headerlink" title="Motion Animation"></a>Motion Animation</h1></center>
