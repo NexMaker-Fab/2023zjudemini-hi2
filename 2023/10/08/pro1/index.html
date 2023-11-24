@@ -155,7 +155,7 @@
 <h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>Information about the application and the modules that need to be installed.</p>
 <h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p>Templates folder. When you create a new post, Hexo creates a new file based on the template file in scaffold. Hexo’s template is what is filled in by default in a newly created markdown file. For example, if you change the Front-matter in scaffold&#x2F;post.md, you’ll include the change every time you create a new post. This means that every new post created by the hexo command will contain the contents of the specified template file.</p>
 <h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>The resources folder is where user resources, such as markdown articles, are stored. Markdown and HTML files are parsed and placed in the public folder, while other files are copied over.<br>(Note: Except the _posts folder, files&#x2F;folders that start with _ (underscore) and hidden files will be ignored.)</p>
-<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>Theme folders. Hexo parses markdown files in the source directory to generate static pages based on topics.</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>Theme folders. Hexo parses markdown files in the source directory to generate static pages based on topics.<br><img src="/2023zjudemini-hi2/images/hxxx1.png"><br><br></p>
 <center>
 
 <h1 id="Choose-Theme"><a href="#Choose-Theme" class="headerlink" title="Choose Theme"></a>Choose Theme</h1></center>
@@ -169,6 +169,15 @@
 <p>Visit <a  href ="https://hexo.io/themes/index.html"><strong>hexo theme</strong></a>, where there are many themes to choose from, choose your favorite and follow the steps above to deploy it.</p>
 <center>
 
+<h1 id="Teamwork"><a href="#Teamwork" class="headerlink" title="Teamwork"></a>Teamwork</h1></center>
+
+<h2 id="Github-Cooperation"><a href="#Github-Cooperation" class="headerlink" title="Github Cooperation"></a>Github Cooperation</h2><p>To directly invite team members to manage the project, you need to add administrative permissions.<br>Start by adding collaborators and teams in the project Settings, inviting team members and adding them as maintenance roles.</p>
+<p><img src="/2023zjudemini-hi2/images/hxx1.png"></p>
+<p>After team members accept the invitation, they can manage the project.<br><img src="/2023zjudemini-hi2/images/hxx2.png"><br><br></p>
+<h2 id="GitHub-Branch-Management"><a href="#GitHub-Branch-Management" class="headerlink" title="GitHub Branch Management"></a>GitHub Branch Management</h2><p>Using Git for branch management is an effective way. Each team member can work on their own branch and then create Pull Requests to merge changes to the master branch. This allows team members to work independently while ensuring the stability of the master branch.<br>For team members, it is important to change the deployment path and branch in the _config.yml file to make it easier for the project manager to manage.<br><img src="/2023zjudemini-hi2/images/hx10.png"><br><img src="/2023zjudemini-hi2/images/hxx3.png"><br><br></p>
+<h2 id="Markdown-File-Separation"><a href="#Markdown-File-Separation" class="headerlink" title="Markdown File Separation"></a>Markdown File Separation</h2><p>Hexo usually uses Markdown files to write its content. You can assign different Markdown files to different team members, each responsible for their own part. When they are done editing, use a version control system to merge the changes.</p>
+<center>
+
 <h1 id="Building-Website"><a href="#Building-Website" class="headerlink" title="Building Website"></a>Building Website</h1></center>
 
 <h2 id="Set-Home-Page"><a href="#Set-Home-Page" class="headerlink" title="Set Home Page"></a>Set Home Page</h2><h3 id="manage-the-sidebar-title-and-main-image"><a href="#manage-the-sidebar-title-and-main-image" class="headerlink" title="(manage the sidebar, title, and main image)"></a>(manage the sidebar, title, and main image)</h3><p>By default, your homepage will show a title, body text, some links, and a cover art. You can modify these configurations in the <strong>config.yml</strong> file under the theme folder (&#x2F;themes&#x2F;frame&#x2F;) :<br>If you want to change the cover image, place your image in the thems&#x2F;frame&#x2F;source directory and then change the <strong>image</strong> file path accordingly.<br>If you want to adjust the sidebar, change the <strong>links</strong> file path accordingly<br><img src="/2023zjudemini-hi2/images/hx0.png"><br><img src="/2023zjudemini-hi2/images/hx1.png"><br><br></p>
@@ -176,14 +185,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="title class_">page</span> about</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2023zjudemini-hi2/images/hx6.png"><br>Then, open the -config.yml file in the Blog&#x2F;themes&#x2F;frame&#x2F; directory and create a new entry under the menu property as shown below.<br><img src="/2023zjudemini-hi2/images/hx7.png"><br>Then, in the source&#x2F;about&#x2F;index.md file, enter what you want as a profile:<br><img src="/2023zjudemini-hi2/images/hx8.png"><br>You can see that the profile page has been added to the site.<br><img src="/2023zjudemini-hi2/images/hx9.png"><br><br></p>
-<h2 id="Write-First-Document"><a href="#Write-First-Document" class="headerlink" title="Write First Document"></a>Write First Document</h2><p>Create a new markdown file in the <strong>Blog&#x2F;source&#x2F;_posts&#x2F;</strong> path (If you do not have a markdown editor, directly create a txt file or other files, rename the suffix to md, when editing, right-click → open mode → Notepad, or modify the file suffix after editing).<br><img src="/2023zjudemini-hi2/images/hx2.png"><br><br><br>Add the following declaration at the beginning of the file, and then feel free to add some body parts such as:<br><img src="/2023zjudemini-hi2/images/hxx4.png"><br><br><br>You can see that we have the new document in our website list.<br><img src="/2023zjudemini-hi2/images/hx4.png"><br><img src="/2023zjudemini-hi2/images/hx5.png"><br><br><br>Put an image into <strong>images</strong> file and type the following to add an image：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/images/xx.png)</span><br></pre></td></tr></table></figure>
-
-<p>Type the following to add an link：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[website name](https://Uniform Resource Locator)</span><br></pre></td></tr></table></figure>
-<br>
-
-
+<h2 id="Write-First-Document"><a href="#Write-First-Document" class="headerlink" title="Write First Document"></a>Write First Document</h2><p>Create a new markdown file in the <strong>Blog&#x2F;source&#x2F;_posts&#x2F;</strong> path (If you do not have a markdown editor, directly create a txt file or other files, rename the suffix to md, when editing, right-click → open mode → Notepad, or modify the file suffix after editing).<br><img src="/2023zjudemini-hi2/images/hx2.png"><br><br><br>Add the following declaration at the beginning of the file, and then feel free to add some body parts such as:<br><img src="/2023zjudemini-hi2/images/hxx4.png"><br><br><br>You can see that we have the new document in our website list.<br><img src="/2023zjudemini-hi2/images/hx4.png"><br><img src="/2023zjudemini-hi2/images/hx5.png"><br><br></p>
 <center>
 
 <h1 id="Clone-Pull-and-Push-to-Github"><a href="#Clone-Pull-and-Push-to-Github" class="headerlink" title="Clone, Pull and Push to Github"></a>Clone, Pull and Push to Github</h1></center>
@@ -207,15 +209,8 @@
 <h1 id="Push-to-github"><a href="#Push-to-github" class="headerlink" title="Push to github"></a>Push to github</h1><p>After each update, you will only see the changes locally. If you repeat the deployment (as shown below), the GitHub Page you deploy will also change for everyone to see.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo d </span><br></pre></td></tr></table></figure>
 
-<center>
 
-<h1 id="Teamwork"><a href="#Teamwork" class="headerlink" title="Teamwork"></a>Teamwork</h1></center>
 
-<h2 id="Github-Cooperation"><a href="#Github-Cooperation" class="headerlink" title="Github Cooperation"></a>Github Cooperation</h2><p>To directly invite team members to manage the project, you need to add administrative permissions.<br>Start by adding collaborators and teams in the project Settings, inviting team members and adding them as maintenance roles.</p>
-<p><img src="/2023zjudemini-hi2/images/hxx1.png"></p>
-<p>After team members accept the invitation, they can manage the project.<br><img src="/2023zjudemini-hi2/images/hxx2.png"><br><br></p>
-<h2 id="GitHub-Branch-Management"><a href="#GitHub-Branch-Management" class="headerlink" title="GitHub Branch Management"></a>GitHub Branch Management</h2><p>Using Git for branch management is an effective way. Each team member can work on their own branch and then create Pull Requests to merge changes to the master branch. This allows team members to work independently while ensuring the stability of the master branch.<br>For team members, it is important to change the deployment path and branch in the _config.yml file to make it easier for the project manager to manage.<br><img src="/2023zjudemini-hi2/images/hx10.png"><br><img src="/2023zjudemini-hi2/images/hxx3.png"><br><br></p>
-<h2 id="Markdown-File-Separation"><a href="#Markdown-File-Separation" class="headerlink" title="Markdown File Separation"></a>Markdown File Separation</h2><p>Hexo usually uses Markdown files to write its content. You can assign different Markdown files to different team members, each responsible for their own part. When they are done editing, use a version control system to merge the changes.</p>
 <center>
 
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1></center>
